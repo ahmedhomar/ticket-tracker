@@ -1,25 +1,53 @@
 import "./App.scss";
 
-function App() {
+const App = () => {
+  /* const Employee = ({teamArr}) => {
+    const employeeListJSX = teamArr.map((team) => {
+        return < key={team.id} />
+    }) */
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="app">
+        {/* <header className="greeting">
+          <img src={greetingImg} className="greeting__img" alt={greetingTime} />
+          <h1 className="greeting__heading">
+            Good {greetingTime} <br /> {user.firstName} {user.lastName}
+          </h1>
+        </header>
+
+        <section className="button-section">
+          <Button buttonText={"Lets Go"} isSecondary={true} />
+          <Button buttonText={"Explore"} />
+        </section>
+
+        <section className="discover">
+          <h2>Discover</h2>
+          <ArtistTile
+            imgSrc={artist.strArtistThumb}
+            title={artist.strArtist}
+            text={artist.strBiographyEN}
+          />
+        </section>
+
+        <section className="discography">
+          <h2 className="discography__heading">Discography</h2>
+
+          <div className="all-albums">
+            <AlbumTiles title="Albums" albumsArr={filteredAlbums} />
+          </div>
+
+          <div className="highest-rated">
+            <AlbumTiles title="Highest Rated" albumsArr={highestRating} />
+          </div>
+        </section>
+        <section className="gallery">
+          <h2 className="gallery__heading">Gallery</h2>
+          <Carousel imagesArr={galleryImages} />
+        </section> */}
+      </div>
+    </>
   );
-}
+};
 
 export default App;
 
@@ -215,10 +243,30 @@ class Counter extends React.Component {
   }
 }
 
-ReactDOM.render(<Counter />, document.getElementById('app'));
 
 
 
+import { useState } from "react";
+import "./Carousel.scss";
+
+const Carousel = ({ imagesArr }) => {
+  const [showImage, setShowImage] = useState(true);
+
+  const handleClick = () => {
+    setShowImage(!showImage);
+  };
+
+  return (
+    <div className="carousel">
+      <button onClick={handleClick}>Toggle Image</button>
+      {showImage && (
+        <img src={imagesArr[0]} alt="" className="carousel__image" />
+      )}
+    </div>
+  );
+};
+
+export default Carousel;
 
 
 */
