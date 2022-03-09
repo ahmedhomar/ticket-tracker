@@ -1,7 +1,6 @@
-// @ts-nocheck
 import "./App.scss";
-
-import AllTicketTiles from "./components/AllTicketTiles/AllTicketTiles";
+import team from "./assets/data/team.js";
+import TicketTilesContainer from "./components/TicketTilesContainer/TicketTilesContainer";
 
 const App = () => {
   return (
@@ -10,14 +9,15 @@ const App = () => {
         <header className="app__header">
           <h1 className="app__header__heading">Ticket Tracker</h1>
         </header>
-
         <section className="ticket-section">
-          <AllTicketTiles />
+          <TicketTilesContainer team={team} />
         </section>
       </div>
     </>
   );
 };
+
+// userName={`${user.firstName} ${user.lastName}`}
 
 export default App;
 
