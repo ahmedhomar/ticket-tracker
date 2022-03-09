@@ -4,7 +4,7 @@ import CounterTile from "../CounterTile/CounterTile";
 const TicketTile = ({ name, role }) => {
   return (
     <>
-      <div className="ticket-tiles">
+      <div className="ticket-tile">
         {name} <br />
         {role}
       </div>

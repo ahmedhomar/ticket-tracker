@@ -17,8 +17,6 @@ const App = () => {
   );
 };
 
-// userName={`${user.firstName} ${user.lastName}`}
-
 export default App;
 
 /* 
@@ -48,143 +46,8 @@ Plan:
 − Pass data into them via props
 − Use State to handle the increment and decrement of tickets
 − Style it however you like, but don’t leave it blank.
-
-
------------------------------------
-const Button = (props) => {
-  let className = "button ";
-
-  props.isPrimary is a boolean, true or false
-
-  if (props.isSecondary === true) {
-    className += "button--secondary";
-  } else {
-    className += "button--primary";
-  }
-
-  return <button className={className}>{props.buttonText}</button>;
-};
---------------------------------------------
-
-/* 
-const App = () => {
-  const employeeTicketJSX = teamArr.map({name, role} => {
-    return (
-      <employeeTicket
-        employeeName={name}
-        employeeRole={role}
-        key={teamArr.id}
-      />
-    );
-  });
-
-  return (
-    <div className="app">
-      <h1>PokeReact</h1>
-      <div className="card-container">{allPokemonCards}</div>
-    </div>
-  );
-};
-
 */
 
-// class Counter extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.inputRef = React.createRef()
-//     this.state = { curValue: 1 }
-//   }
-
-//   changeValue = ({curValue, newValue}) => {
-//     this.setState({ curValue: newValue !== 100 ? newValue : 99 })
-//   }
-
-//   handleValueChange = (newValue, isField) => {
-//     const {
-//       props: { id, onChange },
-//       state: {
-//         curValue
-//       }
-//     } = this
-
-//     newValue = parseInt(newValue, 10)
-
-//     if (!newValue) {
-//       if (isField) {
-//         newValue = ''
-//       } else {
-//         newValue = 1
-//       }
-//     }
-//     if (newValue < 0) {
-//       newValue = 1
-//     }
-//     if (!isField) {
-//       this.inputRef.current.style.transform = newValue > curValue ? 'translateY(-100%)' : 'translateY(100%)'
-//       this.inputRef.current.style.opacity = 0
-
-//     setTimeout(() => {
-//         this.inputRef.current.style.transitionDuration = '0s'
-//         this.inputRef.current.style.transform = newValue > curValue ? 'translateY(100%)' : 'translateY(-100%)'
-//         this.inputRef.current.style.opacity = 0
-//         this.changeValue({ curValue, newValue })
-
-//         setTimeout(() => {
-//           this.inputRef.current.style.transitionDuration = '0.3s'
-//           this.inputRef.current.style.transform = 'translateY(0)'
-//           this.inputRef.current.style.opacity = 1
-//         }, 20)
-//       }, 250)
-//     } else {
-//       this.changeValue({ curValue, newValue })
-//     }
-//   }
-
-//   render () {
-//     const {
-//       state: {
-//         curValue
-//       }
-//     } = this
-
-//     return (
-//       <div {...{ className: 'counter' }}>
-//         <button
-//           {...{
-//             className: 'button',
-//             onClick: () => { this.handleValueChange(curValue - 1) },
-//             title: '-1'
-//           }}
-//         >
-//           −
-//         </button>
-//         <div {...{ className: 'input-wrapper' }}>
-//           <input
-//           {...{
-//             className: 'input',
-//             maxlength: 2,
-//             onChange: e => {
-//               e.preventDefault()
-//               this.handleValueChange(e.target.value, true)
-//             },
-//             ref: this.inputRef,
-//             type: 'text',
-//             value: curValue
-//           }}
-//         />
-//         </div>
-//         <button
-//           {...{
-//             className: 'button',
-//             onClick: () => { this.handleValueChange(curValue + 1) },
-//             title: '+1'
-//           }}
-//         >
-//           +
-//         </button>
-//       </div>
-//     )
-//   }
 // .input-wrapper{
 //   width: 4rem;
 //   height: 4rem;
@@ -225,25 +88,3 @@ const App = () => {
 //     color: $cAccent;
 //   }
 // }
-
-// import { useState } from "react";
-// import "./Carousel.scss";
-
-// const Carousel = ({ imagesArr }) => {
-//   const [showImage, setShowImage] = useState(true);
-
-//   const handleClick = () => {
-//     setShowImage(!showImage);
-//   };
-
-//   return (
-//     <div className="carousel">
-//       <button onClick={handleClick}>Toggle Image</button>
-//       {showImage && (
-//         <img src={imagesArr[0]} alt="" className="carousel__image" />
-//       )}
-//     </div>
-//   );
-// };
-
-// export default Carousel;
