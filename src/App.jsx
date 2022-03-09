@@ -1,10 +1,14 @@
 import "./App.scss";
+import team from "./assets/data/team.js";
 
 const App = () => {
-  /* const Employee = ({teamArr}) => {
-    const employeeListJSX = teamArr.map((team) => {
-        return < key={team.id} />
-    }) */
+  const employeeTicketJSX = team.map((teamArr) => {
+    return (
+      <employeeTicket
+        employeeName={teamArr.name}
+        employeeRole={teamArr.role}
+        key={teamArr.id}
+      />)
   return (
     <>
       <div className="app">
@@ -47,7 +51,7 @@ const App = () => {
       </div>
     </>
   );
-};
+});
 
 export default App;
 
@@ -96,7 +100,27 @@ const Button = (props) => {
 };
 --------------------------------------------
 
+/* 
+const App = () => {
+  const employeeTicketJSX = teamArr.map({name, role} => {
+    return (
+      <employeeTicket
+        employeeName={name}
+        employeeRole={role}
+        key={teamArr.id}
+      />
+    );
+  });
 
+  return (
+    <div className="app">
+      <h1>PokeReact</h1>
+      <div className="card-container">{allPokemonCards}</div>
+    </div>
+  );
+};
+
+*/
 
 
 
