@@ -1,57 +1,23 @@
+// @ts-nocheck
 import "./App.scss";
-import team from "./assets/data/team.js";
+
+import AllTicketTiles from "./components/AllTicketTiles/AllTicketTiles";
 
 const App = () => {
-  const employeeTicketJSX = team.map((teamArr) => {
-    return (
-      <employeeTicket
-        employeeName={teamArr.name}
-        employeeRole={teamArr.role}
-        key={teamArr.id}
-      />)
   return (
     <>
       <div className="app">
-        {/* <header className="greeting">
-          <img src={greetingImg} className="greeting__img" alt={greetingTime} />
-          <h1 className="greeting__heading">
-            Good {greetingTime} <br /> {user.firstName} {user.lastName}
-          </h1>
+        <header className="app__header">
+          <h1 className="app__header__heading">Ticket Tracker</h1>
         </header>
 
-        <section className="button-section">
-          <Button buttonText={"Lets Go"} isSecondary={true} />
-          <Button buttonText={"Explore"} />
+        <section className="ticket-section">
+          <AllTicketTiles />
         </section>
-
-        <section className="discover">
-          <h2>Discover</h2>
-          <ArtistTile
-            imgSrc={artist.strArtistThumb}
-            title={artist.strArtist}
-            text={artist.strBiographyEN}
-          />
-        </section>
-
-        <section className="discography">
-          <h2 className="discography__heading">Discography</h2>
-
-          <div className="all-albums">
-            <AlbumTiles title="Albums" albumsArr={filteredAlbums} />
-          </div>
-
-          <div className="highest-rated">
-            <AlbumTiles title="Highest Rated" albumsArr={highestRating} />
-          </div>
-        </section>
-        <section className="gallery">
-          <h2 className="gallery__heading">Gallery</h2>
-          <Carousel imagesArr={galleryImages} />
-        </section> */}
       </div>
     </>
   );
-});
+};
 
 export default App;
 
@@ -122,175 +88,162 @@ const App = () => {
 
 */
 
+// class Counter extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.inputRef = React.createRef()
+//     this.state = { curValue: 1 }
+//   }
 
+//   changeValue = ({curValue, newValue}) => {
+//     this.setState({ curValue: newValue !== 100 ? newValue : 99 })
+//   }
 
+//   handleValueChange = (newValue, isField) => {
+//     const {
+//       props: { id, onChange },
+//       state: {
+//         curValue
+//       }
+//     } = this
 
+//     newValue = parseInt(newValue, 10)
 
+//     if (!newValue) {
+//       if (isField) {
+//         newValue = ''
+//       } else {
+//         newValue = 1
+//       }
+//     }
+//     if (newValue < 0) {
+//       newValue = 1
+//     }
+//     if (!isField) {
+//       this.inputRef.current.style.transform = newValue > curValue ? 'translateY(-100%)' : 'translateY(100%)'
+//       this.inputRef.current.style.opacity = 0
 
+//     setTimeout(() => {
+//         this.inputRef.current.style.transitionDuration = '0s'
+//         this.inputRef.current.style.transform = newValue > curValue ? 'translateY(100%)' : 'translateY(-100%)'
+//         this.inputRef.current.style.opacity = 0
+//         this.changeValue({ curValue, newValue })
 
+//         setTimeout(() => {
+//           this.inputRef.current.style.transitionDuration = '0.3s'
+//           this.inputRef.current.style.transform = 'translateY(0)'
+//           this.inputRef.current.style.opacity = 1
+//         }, 20)
+//       }, 250)
+//     } else {
+//       this.changeValue({ curValue, newValue })
+//     }
+//   }
 
-class Counter extends React.Component {
-  constructor(props) {
-    super(props);
-    this.inputRef = React.createRef()
-    this.state = { curValue: 1 }
-  }
-  
-  changeValue = ({curValue, newValue}) => {
-    this.setState({ curValue: newValue !== 100 ? newValue : 99 })
-  }
-  
-  handleValueChange = (newValue, isField) => {
-    const {
-      props: { id, onChange },
-      state: {
-        curValue
-      }
-    } = this
+//   render () {
+//     const {
+//       state: {
+//         curValue
+//       }
+//     } = this
 
-    newValue = parseInt(newValue, 10)
+//     return (
+//       <div {...{ className: 'counter' }}>
+//         <button
+//           {...{
+//             className: 'button',
+//             onClick: () => { this.handleValueChange(curValue - 1) },
+//             title: '-1'
+//           }}
+//         >
+//           −
+//         </button>
+//         <div {...{ className: 'input-wrapper' }}>
+//           <input
+//           {...{
+//             className: 'input',
+//             maxlength: 2,
+//             onChange: e => {
+//               e.preventDefault()
+//               this.handleValueChange(e.target.value, true)
+//             },
+//             ref: this.inputRef,
+//             type: 'text',
+//             value: curValue
+//           }}
+//         />
+//         </div>
+//         <button
+//           {...{
+//             className: 'button',
+//             onClick: () => { this.handleValueChange(curValue + 1) },
+//             title: '+1'
+//           }}
+//         >
+//           +
+//         </button>
+//       </div>
+//     )
+//   }
+// .input-wrapper{
+//   width: 4rem;
+//   height: 4rem;
+//   border-radius: 0.6rem/0.8rem;
+//   background-color: $cAccent;
+//   overflow: hidden;
+//   box-shadow:
+//     inset 0 0 0.8rem 0.1rem rgba(darken($cAccent, 20%), 0.2),
+//     0 20px 30px -10px rgba(darken($cAccent, 20%), 0.26);
+// }
 
-    if (!newValue) {
-      if (isField) {
-        newValue = ''
-      } else {
-        newValue = 1
-      }
-    }
-    if (newValue < 0) {
-      newValue = 1
-    }
-    if (!isField) {      
-      this.inputRef.current.style.transform = newValue > curValue ? 'translateY(-100%)' : 'translateY(100%)'
-      this.inputRef.current.style.opacity = 0
-       
-    setTimeout(() => {
-        this.inputRef.current.style.transitionDuration = '0s'
-        this.inputRef.current.style.transform = newValue > curValue ? 'translateY(100%)' : 'translateY(-100%)'
-        this.inputRef.current.style.opacity = 0
-        this.changeValue({ curValue, newValue })
-        
-        setTimeout(() => {
-          this.inputRef.current.style.transitionDuration = '0.3s'
-          this.inputRef.current.style.transform = 'translateY(0)'
-          this.inputRef.current.style.opacity = 1
-        }, 20)
-      }, 250)
-    } else {
-      this.changeValue({ curValue, newValue })
-    }    
-  }
+// .input{
+//   height: 100%;
+//   width: 100%;
+//   background: none;
+//   border: none;
+//   text-align: center;
+//   color: #fff;
+//   font-weight: 900;
+//   font-size: 2rem;
+//   outline: none;
+//   transition-property: transform, opacity;
+//   text-transform: linear;
+//   transition-duration: 0.25s;
+// }
 
-  render () {
-    const {
-      state: {
-        curValue
-      }
-    } = this
-    
-    return (
-      <div {...{ className: 'counter' }}>
-        <button
-          {...{
-            className: 'button',
-            onClick: () => { this.handleValueChange(curValue - 1) },
-            title: '-1'
-          }}
-        >
-          −
-        </button>
-        <div {...{ className: 'input-wrapper' }}>
-          <input
-          {...{
-            className: 'input',
-            maxlength: 2,
-            onChange: e => {
-              e.preventDefault()
-              this.handleValueChange(e.target.value, true)
-            },
-            ref: this.inputRef,
-            type: 'text',
-            value: curValue
-          }} 
-        />
-        </div>
-        <button
-          {...{
-            className: 'button',
-            onClick: () => { this.handleValueChange(curValue + 1) },
-            title: '+1'
-          }}
-        >
-          +
-        </button>
-      </div>
-    )
-  }
-.input-wrapper{
-  width: 4rem;
-  height: 4rem;
-  border-radius: 0.6rem/0.8rem;
-  background-color: $cAccent;
-  overflow: hidden;
-  box-shadow:
-    inset 0 0 0.8rem 0.1rem rgba(darken($cAccent, 20%), 0.2),
-    0 20px 30px -10px rgba(darken($cAccent, 20%), 0.26);
-}
+// .button{
+//   background: none;
+//   border: none;
+//   padding: 0.8rem;
+//   color: rgba($cAccent, 0.35);
+//   font-size: 1.6rem;
+//   outline: none;
+//   cursor: pointer;
+//   transition: color 0.2s ease-in-out;
 
-.input{
-  height: 100%;
-  width: 100%;
-  background: none;
-  border: none;
-  text-align: center;
-  color: #fff;
-  font-weight: 900;
-  font-size: 2rem;
-  outline: none;
-  transition-property: transform, opacity;
-  text-transform: linear;
-  transition-duration: 0.25s;
-}
+//   &:hover{
+//     color: $cAccent;
+//   }
+// }
 
-.button{
-  background: none;
-  border: none;
-  padding: 0.8rem;
-  color: rgba($cAccent, 0.35);
-  font-size: 1.6rem;
-  outline: none;
-  cursor: pointer;
-  transition: color 0.2s ease-in-out;
-  
-  &:hover{
-    color: $cAccent; 
-  }
-}
+// import { useState } from "react";
+// import "./Carousel.scss";
 
+// const Carousel = ({ imagesArr }) => {
+//   const [showImage, setShowImage] = useState(true);
 
+//   const handleClick = () => {
+//     setShowImage(!showImage);
+//   };
 
+//   return (
+//     <div className="carousel">
+//       <button onClick={handleClick}>Toggle Image</button>
+//       {showImage && (
+//         <img src={imagesArr[0]} alt="" className="carousel__image" />
+//       )}
+//     </div>
+//   );
+// };
 
-import { useState } from "react";
-import "./Carousel.scss";
-
-const Carousel = ({ imagesArr }) => {
-  const [showImage, setShowImage] = useState(true);
-
-  const handleClick = () => {
-    setShowImage(!showImage);
-  };
-
-  return (
-    <div className="carousel">
-      <button onClick={handleClick}>Toggle Image</button>
-      {showImage && (
-        <img src={imagesArr[0]} alt="" className="carousel__image" />
-      )}
-    </div>
-  );
-};
-
-export default Carousel;
-
-
-*/
+// export default Carousel;
