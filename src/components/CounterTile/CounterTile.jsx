@@ -15,11 +15,17 @@ const CounterTile = () => {
     <div className="counter-tile">
       <h2 className="counter-tile__heading"> Counter </h2>
       <div className="counter-tile__display"> {counter}</div>
-      <button className="counter-tile__button" onClick={handleIncrement}>
+      <button
+        className="counter-tile__button counter-tile__button--plus"
+        onClick={handleIncrement}
+      >
         {" "}
         +{" "}
       </button>
-      <button className="counter-tile__button" onClick={handleDecrement}>
+      <button
+        className="counter-tile__button counter-tile__button--minus"
+        onClick={handleDecrement}
+      >
         {" "}
         -{" "}
       </button>
