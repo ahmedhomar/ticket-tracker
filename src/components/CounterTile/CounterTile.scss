@@ -1,8 +1,9 @@
 @use "../../assets/sass/variables" as *;
 
 .counter-tile {
-  // .counter-tile__heading {
-  // }
+  .counter-tile__heading {
+    font-size: 24px;
+  }
 
   .counter-tile__display {
     display: flex;
