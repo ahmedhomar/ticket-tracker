@@ -11,7 +11,7 @@
     justify-content: center;
     width: 5rem;
     height: 4rem;
-    border: 2px solid $color-primary;
+    border: 6px solid $color-primary;
     font-size: 25px;
     // border-radius: 0.1rem/0.2rem;
     // background: transparent;
@@ -20,20 +20,14 @@
 
   .counter-tile__button {
     background-color: #ff7823;
-    border: 2px solid $color-black;
+    border: 3px solid $color-black;
     padding: 0.8rem;
-    color: rgba($color-white, 0.35);
-    font-size: 1.6rem;
+    color: rgba($color-black, 0.35);
+    font-size: 2rem;
     outline: none;
     cursor: pointer;
     transition: color 0.2s ease-in-out;
 
-    &--plus {
-      border: 2px solid $color-black;
-    }
-    &--minus {
-      border: 2px solid $color-black;
-    }
     &:hover {
       color: $color-secondary;
     }

@@ -5,9 +5,10 @@
   // // gap: 25px 100px;
   // grid-template-columns: repeat(5, 1fr);
   display: grid;
-  margin: 0 2rem;
+  margin: 0 5rem;
   grid-template-columns: repeat(5, 1fr);
   justify-content: center;
   align-items: center;
+  grid-gap: 1rem;
   // grid-template-rows: 3rem auto;
 }
